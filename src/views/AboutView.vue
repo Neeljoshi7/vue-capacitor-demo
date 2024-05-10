@@ -8,37 +8,23 @@
 
     <ion-content padding>
       <p>This Is About Page</p>
+
+      <!-- Button to navigate back to the Home page -->
       <ion-button @click="goBackHome" full>Go Back To Home</ion-button>
     </ion-content>
   </ion-app>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-import { useRouter } from 'vue-router';
+<script lang="ts" setup>
+import { useRouter } from "vue-router";
 
-export default defineComponent({
-  name: 'about',
-  setup() {
-    const router = useRouter();
+// Initializing router
+const router = useRouter();
 
-    const goBackHome = () => {
-      router.push('/');
-    };
-
-    return {
-      goBackHome
-    };
-  }
-});
+// Function to navigate back to the Home page
+const goBackHome = () => {
+  router.push("/");
+};
 </script>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+<style></style>
